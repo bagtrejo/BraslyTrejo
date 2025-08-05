@@ -1,0 +1,7 @@
+@use 'vars' as *;
+
+.search {
+    padding: .5rem .625rem;
+    border-radius: .625rem;
+    border: 2px solid $secundary-color;
+}

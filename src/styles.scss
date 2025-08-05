@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    /* con el tamano de la fuente
+        manejo la escala de los componentes de primeng */
+    font-size: 14px;
+
+    /* quito el scroll */
+    overflow: hidden;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }

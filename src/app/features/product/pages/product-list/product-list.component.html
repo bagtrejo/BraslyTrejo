@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="content">
+        <section class="toolbar">
+            <app-filter-product (searchChange)="onCurrenSearchChange($event)" />
+            <button class="toolbar__button" type="button">Agregar</button>
+        </section>
+
+        <section class="data">
+            <app-items-product [products]="productsPage()" [isLoading]="loading()"/>
+        </section>
+
+        <section class="pagination">
+            <app-paginate-product 
+            [filteredProducts]="filteredProducts()"
+            [totalPages]="totalPages()"
+            [selectedPage]="selectedPage()"
+            [itemsPerPageOptions]="itemsPerPageOptions"
+            [itemsPerPage]="numberOfItemsPage()"
+            (pageChange)="handleChangePage($event)"
+            (itemsPerPageChange)="onItemsPerPageChange($event)"
+            />
+        </section>
+    </div>
+</div>
