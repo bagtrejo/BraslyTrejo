@@ -1,0 +1,47 @@
+@use 'vars' as *;
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__results {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        gap: .125rem;
+    }
+
+    &__button {
+        border-radius: .3125rem;
+        padding: .625rem;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $secundary-color;
+        }
+      
+          &--active {
+            background-color: $primary-color;
+          }
+      
+          &--disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+    }
+
+    &__select {
+        padding: .125rem .75rem ;
+        margin: 0;
+        border: 2px solid $secundary-color;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+}
