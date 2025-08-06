@@ -18,19 +18,15 @@
   align-items: center;
 
   &__button {
-    padding: .9375rem;
+    padding: 1.875rem;
     border-radius: .3125rem;
     border: none;
+    cursor: pointer;
 
     background-color: $primary-color;
   }
 }
 
-.data {
-  // background-color: red;
-}
-
 .pagination {
   width: 100%;
-  // background-color: green;
 }

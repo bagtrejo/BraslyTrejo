@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { DropdownComponent } from './layout/dropdown/dropdown.component';
 
 @Component({
   selector: 'app-root',

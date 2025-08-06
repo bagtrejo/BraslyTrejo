@@ -4,4 +4,9 @@
     padding: .5rem .625rem;
     border-radius: .625rem;
     border: 2px solid $secundary-color;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+    }
 }
