@@ -1,7 +1,7 @@
 @use 'vars' as *;
 
 .table-wrapper {
-    position: relative; /* Necesario para posicionar el overlay */
+    position: relative;
 }
   
 .table-overlay {
@@ -10,11 +10,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.6); /* Fondo semitransparente */
+    background: rgba(255, 255, 255, 0.6); 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10; /* Asegura que esté por encima de la tabla */
+    z-index: 10;
 }
 
 .table {
@@ -22,7 +22,6 @@
     border-collapse: separate;
     border-spacing: 0;
     border-radius: 8px;
-    overflow: hidden;
     
     table-layout: fixed;
 
@@ -31,7 +30,7 @@
     }
 
     &__cell {
-        padding: .9375rem 0;
+        padding: 1.25rem 0;
         text-align: center;
 
         &--header {
@@ -51,6 +50,10 @@
           
         &--body {
             border-bottom: 2px solid #ddd;
+        }
+
+        &--wrapp{
+            text-overflow: ellipsis;
         }
     }
 

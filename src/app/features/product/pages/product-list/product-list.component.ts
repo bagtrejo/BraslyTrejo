@@ -6,6 +6,8 @@ import { PaginateProductComponent } from '../../components/paginate-product/pagi
 import { ItemsProductComponent } from "../../components/items-product/items-product.component";
 import { ProductUtilsService } from '../../../../core/services/product-utils.service';
 import { IProductRepository, PRODUCT_REPOSITORY } from '../../../../shared/interfaces/product-repository.interface';
+import { Router } from '@angular/router';
+import { ROUTE_PATHS } from '../../../../core/constants/route-paths';
 
 @Component({
   selector: 'app-product-list',
@@ -15,8 +17,8 @@ import { IProductRepository, PRODUCT_REPOSITORY } from '../../../../shared/inter
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent implements OnInit{
-  itemsPerPageOptions = [1, 2, 3]
-  numberOfItemsPage = signal<number>(1);
+  itemsPerPageOptions = [5, 10, 20]
+  numberOfItemsPage = signal<number>(5);
   selectedPage = signal<number>(1);
   currentSearch = model<string>("");
   totalPages= signal<number>(0);
@@ -30,7 +32,8 @@ export class ProductListComponent implements OnInit{
   constructor( 
     @Inject(PRODUCT_REPOSITORY)
     private readonly productRepository: IProductRepository,
-    private productUtils: ProductUtilsService
+    private readonly productUtils: ProductUtilsService,
+    private readonly router: Router
   ){}
 
   ngOnInit(): void {
@@ -74,5 +77,10 @@ export class ProductListComponent implements OnInit{
   onCurrenSearchChange(search: string){
     this.currentSearch.set(search);
     this.updatePagination();
+  }
+
+  goToCreateProduct(){
+    const baseRoute = ROUTE_PATHS.productCreate;
+    this.router.navigate([baseRoute]);
   }
  }

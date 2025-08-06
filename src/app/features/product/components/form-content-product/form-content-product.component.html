@@ -1,0 +1,99 @@
+
+<div class="container">
+    <form class="content" [formGroup]="form">
+        <div class="field">
+            <label class="field__label" for="id">ID</label>
+            <input class="field__input"  [class.field__input--invalid]="fieldInvalid('id')" type="text" id="id" formControlName="id">
+                <div class="field__errors">
+                    <app-field-error-message
+                    [control]="form.get('id')!"
+                    [style.visibility]="fieldInvalid('id') ? 'visible' : 'hidden'"
+                    [errorMessages]="{
+                        required: 'Por favor, ingrese el ID',
+                        idNotUnique: 'El ID ya existe en otro producto '
+                    }"
+                    >
+                    </app-field-error-message>
+                </div>
+        </div>
+        <div class="field">
+            <label class="field__label" for="name">Nombre</label>
+            <input class="field__input"  [class.field__input--invalid]="fieldInvalid('name')" type="text" id="name" formControlName="name">
+                <div class="field__errors">
+                    <app-field-error-message
+                    [control]="form.get('name')!"
+                    [style.visibility]="fieldInvalid('name') ? 'visible' : 'hidden'"
+                    [errorMessages]="{
+                        required: 'Por favor, ingrese la descripcion',
+                        maxLength: 'Campo muy grande',
+                        minLength: 'Campo muy corto'
+                    }"
+                    >
+                    </app-field-error-message>
+                </div>
+        </div>
+        <div class="field">
+            <label class="field__label" for="description">Descripcion</label>
+            <input class="field__input" [class.field__input--invalid]="fieldInvalid('description')" type="text" id="description" formControlName="description">
+                <div class="field__errors">
+                    <app-field-error-message
+                    [style.visibility]="fieldInvalid('description') ? 'visible' : 'hidden'"
+                    [control]="form.get('description')!"
+                    [errorMessages]="{
+                        required: 'Por favor, ingrese la descripción',
+                    }"
+                    >
+                    </app-field-error-message>
+                </div>
+        </div>
+    
+        <div class="field">
+            <label class="field__label" for="logo">Logo</label>
+            <input class="field__input" [class.field__input--invalid]="fieldInvalid('logo')" type="text" id="logo" formControlName="logo">
+                <div class="field__errors">
+                    <app-field-error-message
+                    [control]="form.get('logo')!"
+                    [style.visibility]="fieldInvalid('logo') ? 'visible' : 'hidden'"
+                    [errorMessages]="{
+                        required: 'Por favor, ingrese la descripcion',
+                    }"
+                    >
+                    </app-field-error-message>
+                </div>
+        </div>
+        <div class="field">
+            <label class="field__label" for="date_release">Fecha Liberación</label>
+            <input class="field__input" [class.field__input--invalid]="fieldInvalid('date_release')" type="date" id="date_release" formControlName="date_release">
+                <div class="field__errors">
+                    <app-field-error-message
+                    [style.visibility]="fieldInvalid('date_release') ? 'visible' : 'hidden'"
+                    [control]="form.get('date_release')!"
+                    [errorMessages]="{
+                        required: 'Por favor, ingrese la descripcion',
+                        minDate: 'La fecha debe ser igual o mayor a la actual'
+                    }"
+                    >
+                    </app-field-error-message>
+                </div>
+        </div>
+        <div class="field">
+            <label class="field__label" for="date_revision">Fecha Revisión</label>
+            <input class="field__input" [class.field__input--invalid]="fieldInvalid('date_revision')" type="date" id="date_revision" formControlName="date_revision">
+                <div class="field__errors">
+                    <app-field-error-message
+                    [control]="form.get('date_revision')!"
+                    [style.visibility]="fieldInvalid('date_revision') ? 'visible' : 'hidden'"
+                    [errorMessages]="{
+                        required: 'Por favor, ingrese la fecha de revisión',
+                        minDateFromControl: 'La fecha debe ser al menos un año mayor a la fecha de liberación'
+                    }"
+                    >
+                    </app-field-error-message>
+                </div>
+        </div>
+    </form>
+    
+    <div class="buttons">
+        <app-form-actions-product (submit)="onSubmit()"  (reset)="handleResetFields()"/>
+    </div>
+</div>

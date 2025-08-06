@@ -1,0 +1,15 @@
+<div class="dropdown">
+    <button  #triggerBtn (click)="toggleMenu()" class="dropdown__button">
+      <span class="dropdown__icon">⋮</span>
+    </button>
+  
+    <ng-template #dropdownMenu>
+        <ul class="dropdown__menu">
+            @for (item of options(); track $index) {
+                <li class="dropdown__item" (click)="selectOption(item, $event)">
+                    {{ item.label }}
+                </li>
+            }
+        </ul> 
+    </ng-template>
+  </div>

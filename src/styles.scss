@@ -1,3 +1,6 @@
+/* custom fonts */
+@use "fonts" as *;
+
 html {
     /* con el tamano de la fuente
         manejo la escala de los componentes de primeng */
@@ -5,9 +8,13 @@ html {
 
     /* quito el scroll */
     overflow: hidden;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html,
+body{
+  font-family: "Poppins" !important;
+}
