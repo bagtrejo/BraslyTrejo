@@ -1,5 +1,3 @@
-// product-create.component.spec.ts
-
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { ProductCreateComponent } from './product-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -53,7 +51,8 @@ describe('ProductCreateComponent', () => {
       ],
       providers: [
         { provide: PRODUCT_REPOSITORY, useValue: repoSpy },
-        { provide: Router,             useValue: routerSpy }
+        { provide: Router, useValue: routerSpy },
+        { provide: ActivatedRoute, useValue: { snapshot: {} } },
       ]
     }).compileComponents();
 
