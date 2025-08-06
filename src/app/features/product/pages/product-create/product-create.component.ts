@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Inject, OnInit, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { IProductRepository, PRODUCT_REPOSITORY } from '../../../../shared/interfaces/product-repository.interface';
 import { IProduct } from '../../../../shared/interfaces/product.interface';
 import { FormContentProductComponent } from "../../components/form-content-product/form-content-product.component";
@@ -19,7 +19,6 @@ export class ProductCreateComponent{
 
 
   constructor(
-    private activedRoute: ActivatedRoute, 
     @Inject(PRODUCT_REPOSITORY) public productRepo: IProductRepository,
     private router: Router
   ){
