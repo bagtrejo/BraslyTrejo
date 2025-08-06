@@ -1,0 +1,21 @@
+@use 'vars' as *;
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1.875rem;
+}
+
+.button {
+    padding: 1.875rem;
+    border-radius: .3125rem;
+    border: none;
+    cursor: pointer;
+
+    background-color: $secundary-color;
+
+    &--submit {
+        background-color: $primary-color;
+    }
+}

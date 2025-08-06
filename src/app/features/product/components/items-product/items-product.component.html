@@ -1,0 +1,56 @@
+
+<div class="table-wrapper">
+    <table class="table">
+        <thead class="table__head">
+            <tr>
+                <th class="table__cell table__cell--header">Logo</th>
+                <th class="table__cell table__cell--header">Nombre del producto</th>
+                <th class="table__cell table__cell--header">Descripción</th>
+                <th class="table__cell table__cell--header">Fecha de liberación</th>
+                <th class="table__cell table__cell--header">Fecha de reestructuración</th>
+                <th class="table__cell table__cell--header"></th>
+            </tr>
+        </thead>
+        <tbody style="overflow: visible;">
+            @for (item of products(); track item.id) {
+                <tr style="overflow: visible;">
+                    <td class="table__cell table__cell--body table__cell--logo">
+                        <img 
+                            [src]="item.logo" 
+                            [appDefaultImage]="'assets/images/default.png'" 
+                            alt="Image logo" 
+                        />
+                    </td>
+                    <td class="table__cell table__cell--body">{{ item.name }}</td>
+                    <td class="table__cell table__cell--body">{{ item.description }}</td>
+                    <td class="table__cell table__cell--body">{{ item.date_release }}</td>
+                    <td class="table__cell table__cell--body">{{ item.date_revision }}</td>
+                    <td class="table__cell table__cell--body">
+                        <app-dropdown
+                            [options]="actions()"
+                            [rowData]="item"
+                            (actionSelected)="handleActionSelected($event)">
+                      </app-dropdown>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (isLoading()) {
+        <div class="table-overlay">
+          <app-spinner />
+        </div>
+      }
+
+    @if (showConfirm()) {
+        <app-confirm-dialog
+            title="Eliminar Producto"
+            [message]="'¿Està seguro que desea eliminar el producto '+ productIdToDelete() + '?'"
+            (confirmed)="handleDelete($event)"
+        />
+    }
+</div>
+
+
+

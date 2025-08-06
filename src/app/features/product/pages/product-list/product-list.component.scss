@@ -1,0 +1,32 @@
+@use 'vars' as *;
+
+.container {
+  background: white;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 20px;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__button {
+    padding: 1.875rem;
+    border-radius: .3125rem;
+    border: none;
+    cursor: pointer;
+
+    background-color: $primary-color;
+  }
+}
+
+.pagination {
+  width: 100%;
+}

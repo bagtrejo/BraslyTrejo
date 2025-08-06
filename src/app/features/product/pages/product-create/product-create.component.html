@@ -1,0 +1,16 @@
+<div class="container">
+    <section class="form">
+        <h2 class="form__title">{{ productData() ? 'Formulario de Edición' :  'Formulario de Registro'}}</h2>
+
+        <hr class="form__divider">
+        
+        <div class="form__content">
+            <app-form-content-product 
+                [productRepo]="productRepo"
+                (save)="handleSave($event)"
+                (update)="handleUpdate($event)"
+                [productToEdit]="productData()"
+            />
+        </div>
+    </section>
+</div>

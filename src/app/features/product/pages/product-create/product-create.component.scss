@@ -1,0 +1,33 @@
+@use 'vars' as *;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  background-color: white;
+  width: 60vw;
+  min-height: 80vh;
+  overflow-y: auto;
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  
+  &__title {
+    text-align: center;
+    padding: .625rem;
+  }
+
+  &__divider {
+    border: none;
+    height: .125rem;
+    background-color: $secundary-color;
+  }
+
+  &__content {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+}
